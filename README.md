@@ -1,3 +1,8 @@
+## Multi Step Form
+
+This multi steps form project will use radio-buttons, checkboxes and input areas.
+The purpose is to get your food preferences and to store them in a single state object.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
