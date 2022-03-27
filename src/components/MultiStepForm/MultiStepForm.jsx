@@ -15,8 +15,11 @@ function MultiStepForm() {
     preferences: {},
   });
 
-  const modifyIndex = (index) => {
+  const modifyIndex = (index, formData) => {
     setFormIndex(index);
+    if (formData) {
+      setFoodPreferences({ ...foodPreferences, ...formData });
+    }
   };
   return (
     <div className={styles.containerMultiStep}>
