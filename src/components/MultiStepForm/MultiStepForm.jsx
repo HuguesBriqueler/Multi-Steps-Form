@@ -2,6 +2,9 @@ import { useState } from "react";
 import styles from "./MultiStepForm.module.css";
 
 import Progress from "../Progress/Progress";
+import CardBegin from "../cards/CardBegin";
+import CardEnd from "../cards/CardEnd";
+import DietForm from "../forms/DietForm";
 
 function MultiStepForm() {
   const [formIndex, setFormIndex] = useState(1);
@@ -11,9 +14,16 @@ function MultiStepForm() {
     allergies: [],
     preferences: {},
   });
+
+  const modifyIndex = (index) => {
+    setFormIndex(index);
+  };
   return (
     <div className={styles.containerMultiStep}>
       <Progress />
+      {formIndex === 1 && <CardBegin modifyIndex={modifyIndex} />}
+      {formIndex === 2 && <DietForm modifyIndex={modifyIndex} />}
+      {formIndex === 5 && <CardEnd />}
     </div>
   );
 }
