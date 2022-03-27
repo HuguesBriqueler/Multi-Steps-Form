@@ -5,6 +5,7 @@ import Progress from "../Progress/Progress";
 import CardBegin from "../cards/CardBegin";
 import CardEnd from "../cards/CardEnd";
 import DietForm from "../forms/DietForm";
+import FoodStyle from "../forms/FoodStyle";
 
 function MultiStepForm() {
   const [formIndex, setFormIndex] = useState(1);
@@ -26,6 +27,7 @@ function MultiStepForm() {
       <Progress />
       {formIndex === 1 && <CardBegin modifyIndex={modifyIndex} />}
       {formIndex === 2 && <DietForm modifyIndex={modifyIndex} />}
+      {formIndex === 3 && <FoodStyle modifyIndex={modifyIndex} />}
       {formIndex === 5 && <CardEnd />}
     </div>
   );
