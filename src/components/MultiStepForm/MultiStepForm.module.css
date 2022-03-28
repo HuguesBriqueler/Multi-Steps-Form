@@ -1,0 +1,21 @@
+.containerMultiStep {
+  max-width: 700px;
+  background: #f1f1f1;
+  margin: 200px auto 0;
+  position: relative;
+  padding: 20px;
+}
+@media screen and (max-width: 700px) {
+  .containerMultiStep {
+    margin: 200px 10px;
+  }
+}
+label,
+input {
+  display: block;
+}
+
+form {
+  background: #f1f1f1;
+  width: 100%;
+}

@@ -1,0 +1,17 @@
+.containerImg {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
+.blocImg {
+  width: 70px;
+  height: 70px;
+  background: #f1f1f1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
