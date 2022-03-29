@@ -27,7 +27,7 @@ function MultiStepForm() {
   console.log(foodPreferences);
   return (
     <div className={styles.containerMultiStep}>
-      <Progress />
+      <Progress formIndex={formIndex} />
       {formIndex === 1 && <CardBegin modifyIndex={modifyIndex} />}
       {formIndex === 2 && <DietForm modifyIndex={modifyIndex} />}
       {formIndex === 3 && <FoodStyle modifyIndex={modifyIndex} />}
