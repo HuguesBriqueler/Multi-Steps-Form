@@ -24,16 +24,22 @@ function MultiStepForm() {
       setFoodPreferences({ ...foodPreferences, ...formData });
     }
   };
-  console.log(foodPreferences);
+
+  const formLayout = [
+    <CardBegin modifyIndex={modifyIndex} key={"CardBegin"} />,
+    <DietForm modifyIndex={modifyIndex} key={"DietForm"} />,
+    <FoodStyle modifyIndex={modifyIndex} key={"FoodStyle"} />,
+    <Allergies modifyIndex={modifyIndex} key={"Allergies"} />,
+    <Preferences modifyIndex={modifyIndex} key={"Preferences"} />,
+    <CardEnd key={"CardEnd"} />,
+  ];
+
   return (
     <div className={styles.containerMultiStep}>
       <Progress formIndex={formIndex} />
-      {formIndex === 1 && <CardBegin modifyIndex={modifyIndex} />}
-      {formIndex === 2 && <DietForm modifyIndex={modifyIndex} />}
-      {formIndex === 3 && <FoodStyle modifyIndex={modifyIndex} />}
-      {formIndex === 4 && <Allergies modifyIndex={modifyIndex} />}
-      {formIndex === 5 && <Preferences modifyIndex={modifyIndex} />}
-      {formIndex === 6 && <CardEnd />}
+      {formLayout.map((form, index) => {
+        return index === formIndex - 1 ? form : null;
+      })}
     </div>
   );
 }

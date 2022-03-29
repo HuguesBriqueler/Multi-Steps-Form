@@ -7,7 +7,10 @@ function DietForm(props) {
     setFormData({ diet: e.target.value });
   };
 
-  const handleForm = (e) => e.preventDefault();
+  const handleForm = (e) => {
+    e.preventDefault();
+    props.modifyIndex(3, formData);
+  };
 
   return (
     <form onSubmit={handleForm} className={styles.dietForm}>
@@ -44,7 +47,7 @@ function DietForm(props) {
         id="vegan"
         value="vegan"
       />
-      <button onClick={() => props.modifyIndex(3, formData)}>Valider</button>
+      <button type="submit">Valider</button>
     </form>
   );
 }
